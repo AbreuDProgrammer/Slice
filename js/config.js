@@ -1,0 +1,1 @@
+const sideBarLength = 20;

@@ -9,14 +9,30 @@ $(document).ready(() => {
     var div = $('<div></div>').attr('id', 'welcomeMessage');
     var message = $('<span></span>').attr('class','userName').html(username);
     $(div).append(message);
-    $('#mySidebar').prepend(div);
+    $('#contats').prepend(div);
+
+    $('body').mousemove(function( event ) {
+        // Width == X
+
+        if((event.pageX/16) <= 2 && (event.pageY/16) <= ($('body').outerHeight()/16)-10 && navBarOpened === false){
+            listConts();
+        }else if((event.pageX/16) > 20 && navBarOpened === true){
+            closeConts();
+        }
+
+        if((event.pageX/16) >= ($('body').outerWidth()/16)-2 && (event.pageY/16) <= ($('body').outerHeight()/16)-10 && messageDetailsOpened === false){
+            showDetails();
+        }else if((event.pageX/16) <= ($('body').outerWidth()/16)-20 && messageDetailsOpened === true){
+            hideDetails();
+        }
+    });
 });
 
 function listConts()
 {
     navBarOpened = true;
-    $('#contats').css('width', '20em');
-    $('.sent').css('margin-left', '21em');
+    $('#contats').css('width', sideBarLength+'em');
+    $('.sent').css('margin-left', (sideBarLength+1)+'em');
     $('#writeInput').css('width', '70%');
 }
 
@@ -31,9 +47,9 @@ function closeConts()
 function showDetails()
 {
     messageDetailsOpened = true;
-    $('#details').css('width', '20em');
-    $('.received').css('margin-right', '21em');
-    $('.keyboard').css('width', '80%');
+    $('#details').css('width', sideBarLength+'em');
+    $('.received').css('margin-right', (sideBarLength+1)+'em');
+    $('.keyboard').css('width', '82.5%');
 }
 
 function hideDetails()
@@ -43,23 +59,3 @@ function hideDetails()
     $('.received').css('margin-right', '1em');
     $('.keyboard').css('width', '100%');
 }
-
-window.addEventListener('mousemove', function(e) {
-    var mouse = {
-        x: e.pageX,
-        y: e.pageY
-    };
-
-    if((mouse.x/16) <= 20 && navBarOpened === false){
-        listConts();
-    }else if((mouse.x/16) > 20 && navBarOpened === true){
-        closeConts();
-    }
-
-    if((mouse.x/16) > 100 && messageDetailsOpened === false){
-        showDetails();
-    }else if((mouse.x/16) <= 100 && messageDetailsOpened === true){
-        hideDetails();
-    }
-
-});

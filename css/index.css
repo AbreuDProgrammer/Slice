@@ -39,6 +39,8 @@
     border: block;
     border-radius: 0.5em;
     margin: 1em;
+    padding-left: 1em;
+    font-size: 1em;
 }
 
 #sentButton {
@@ -124,6 +126,7 @@
     color: white;
     border-radius: 0.5em;
     white-space: nowrap;
+    padding: 1em;
 }
 
 ::-webkit-scrollbar {
