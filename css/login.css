@@ -1,0 +1,39 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.inputsLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.loginInput {
+    font-size: 1em;
+    width: auto;
+    height: auto;
+    border: block;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 0.25em 1em;
+    background-color: white;
+}
+
+.welcomeDiv {
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#signin {
+    cursor: pointer;
+}

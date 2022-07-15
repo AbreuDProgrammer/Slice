@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <link rel="stylesheet" href="../css/universal.css">
+    <link rel="stylesheet" href="../css/login.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="../css/index.css">
-    <script src="../js/index.js"></script>
+    <script src="../js/login.js"></script>
     <title>YD</title>
 </head>
 <body>
-    <div class="main"></div>
+    <div class="login">
+        <div class="welcomeDiv">
+            <h1>Welcome!</h1>
+        </div>
+        <div class="inputsLogin">
+            <input type="text" placeholder="username" class="loginInput" id="username">
+            <input type="password" placeholder="password" class="loginInput" id="password">
+            <button id="signin" class="loginInput">Sign in</button>
+        </div>
+    </div>
 </body>
 </html>
